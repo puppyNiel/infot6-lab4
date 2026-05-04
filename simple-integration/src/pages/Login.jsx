@@ -23,12 +23,11 @@ export function Login() {
   };
   
   const handleLogin = async () => {
-  // Check if inputs are empty first
   if (!email || !password) {
     setMessage("Please enter both email and password.");
     return;
   }
-
+  console.log("Submitting:", { email, password });
   const { error } = await supabase.auth.signInWithPassword({
     email: email.trim(),
     password: password,
@@ -49,12 +48,14 @@ export function Login() {
       <input
         type="email"
         placeholder="Email"
+        value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
       <input
         type="password"
         placeholder="Password"
+        value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
