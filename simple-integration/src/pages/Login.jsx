@@ -21,8 +21,14 @@ export function Login() {
       setMessage("Sign-up successful! Check your email.");
     }
   };
-
+  
   const handleLogin = async () => {
+  // Check if inputs are empty first
+  if (!email || !password) {
+    setMessage("Please enter both email and password.");
+    return;
+  }
+
   const { error } = await supabase.auth.signInWithPassword({
     email: email.trim(),
     password: password,
@@ -32,8 +38,6 @@ export function Login() {
     setMessage("Login failed: " + error.message);
   } else {
     setMessage("Login successful");
-    
-    // 🔥 REDIRECT HERE
     navigate("/counter");
   }
 };
