@@ -1,86 +1,65 @@
-:root {
-  --charcoal: #1a1a1b;
-  --copper: #b87333;
-  --white: #ffffff;
-}
-
 .counter-container {
-  min-height: 100vh;
-  background-color: var(--charcoal);
-  color: var(--white);
-  font-family: 'Inter', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 4rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .logo span {
-  color: var(--copper);
-}
-
-.btn-logout {
-  background: transparent;
-  color: #a0a0a0;
-  border: 1px solid #444;
-  padding: 6px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn-logout:hover {
-  color: var(--white);
-  border-color: var(--white);
+  color: var(--accent-copper);
 }
 
 .counter-card {
-  margin: 100px auto;
-  max-width: 400px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 3rem;
-  border-radius: 20px;
+  margin: auto;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  padding: 4rem;
+  border-radius: 32px;
+  border: 1px solid var(--glass-border);
 }
 
 .count-display {
-  font-size: 5rem;
-  font-weight: 800;
-  color: var(--copper);
+  font-size: 6rem;
+  font-weight: 900;
   margin: 2rem 0;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 30px rgba(217, 119, 6, 0.3);
 }
 
 .counter-controls {
   display: flex;
-  gap: 1rem;
+  gap: 15px;
   justify-content: center;
 }
 
 .counter-controls button {
-  background: #2a2a2b;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.05);
   color: white;
-  border: 1px solid #444;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: transform 0.2s, border-color 0.2s;
+  transition: all 0.2s;
 }
 
 .counter-controls button:hover {
-  border-color: var(--copper);
-  transform: translateY(-2px);
+  background: var(--accent-copper);
+  border-color: transparent;
 }
