@@ -3,6 +3,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-height: 100vh; /* This is the missing piece for vertical symmetry */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .login-card {
@@ -63,17 +66,18 @@
 .btn-secondary {
   width: 100%;
   padding: 12px;
-  background: var(--accent-copper);
-  border: none;
+  background: transparent; /* Remove solid background */
+  border: 1px solid var(--glass-border); /* Add a subtle border */
   border-radius: 12px;
-  color: white;
-  font-weight: 600;
+  color: var(--text-dim);
+  font-weight: 500;
   cursor: pointer;
-  margin-top: 20px;
-  transition: transform 0.2s ease;
+  margin-top: 12px; /* Slightly less margin than primary */
+  transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-color: var(--accent-copper);
 }
