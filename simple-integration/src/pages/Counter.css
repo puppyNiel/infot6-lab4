@@ -65,7 +65,7 @@
 }
 
 .btn-logout {
-  width: 50px;
+  width: 150px;
   padding: 12px;
   background: transparent; /* Remove solid background */
   border: 1px solid var(--glass-border); /* Add a subtle border */
