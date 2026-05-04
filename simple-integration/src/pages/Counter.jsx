@@ -1,31 +1,36 @@
-import { useState } from "react";
-import './Counter.css'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { supabase } from '../supabaseClient';
+import './Counter.css';
 
 export function Counter() {
-    const [counter, setCounter] = useState(0);
-    
-    function increase() {
-            setCounter(counter + 1);
-        }
+  const [count, setCount] = useState(0);
+  const navigate = useNavigate();
 
-    function Decrease() {
-            setCounter(counter - 1);
-        }
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate('/login');
+  };
 
-    function Reset() {
-            setCounter(0);
-        }
+  return (
+    <div className="counter-container">
+      <nav className="navbar">
+        <div className="logo">Student<span>Portal</span></div>
+        <button className="btn-logout" onClick={handleLogout}>Logout</button>
+      </nav>
 
-    return (
-        <div className="counter-container">
-            <h3>{counter}</h3>
-
-            <div className="buttons">
-                <button onClick={increase}>Increase count</button>
-                <button onClick={Decrease}>Decrease count</button>
-                <button onClick={Reset}>Reset</button>
-            </div>
-            
+      <div className="counter-card">
+        <h2>Dashboard</h2>
+        <p>Current Session Activity</p>
+        
+        <div className="count-display">{count}</div>
+        
+        <div className="counter-controls">
+          <button onClick={() => setCount(count - 1)}>−</button>
+          <button onClick={() => setCount(0)}>Reset</button>
+          <button onClick={() => setCount(count + 1)}>+</button>
         </div>
-    );
+      </div>
+    </div>
+  );
 }

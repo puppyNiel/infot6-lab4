@@ -51,29 +51,40 @@ export function Login() {
 };
 
   return (
-    <div>
-      <h2>Login / Sign Up</h2>
-
-      <input
-        type="email"
-        placeholder="Email"
+    <div className="login-container">
+  <div className="login-card">
+    <h2>Welcome</h2>
+    <p>Sign in to your Student Portal</p>
+    
+    <div className="input-group">
+      <input 
+        type="email" 
+        placeholder="Email Address" 
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
+    </div>
 
-      <input
-        type="password"
-        placeholder="Password"
+    <div className="input-group">
+      <input 
+        type="password" 
+        placeholder="Password" 
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-
-      <br /><br />
-
-      <button onClick={handleSignUp}>Sign Up</button>
-      <button onClick={handleLogin}>Login</button>
-
-      <p>{message}</p>
     </div>
+
+    <div className="button-group">
+      <button className="btn-primary" onClick={handleLogin}>Login</button>
+      <button className="btn-secondary" onClick={handleSignUp}>Create Account</button>
+    </div>
+
+    {message && (
+      <div className={`status-message ${message.includes('successful') ? 'success' : ''}`}>
+        {message}
+      </div>
+    )}
+  </div>
+</div>
   );
 }
