@@ -51,7 +51,7 @@ export function Login() {
 };
 
   return (
-    <div className="login-container">
+  <div className="login-container">
   <div className="login-card">
     <h2>Welcome</h2>
     <p>Sign in to your Student Portal</p>

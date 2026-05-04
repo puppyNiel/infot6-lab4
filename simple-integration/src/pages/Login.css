@@ -59,3 +59,21 @@
   transform: translateY(-2px);
   filter: brightness(1.1);
 }
+
+.btn-secondary {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent-copper);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
