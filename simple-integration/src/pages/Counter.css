@@ -63,3 +63,22 @@
   background: var(--accent-copper);
   border-color: transparent;
 }
+
+.btn-logout {
+  width: 100%;
+  padding: 12px;
+  background: transparent; /* Remove solid background */
+  border: 1px solid var(--glass-border); /* Add a subtle border */
+  border-radius: 12px;
+  color: var(--text-dim);
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 12px; /* Slightly less margin than primary */
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-color: var(--accent-copper);
+}
