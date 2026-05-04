@@ -10,17 +10,26 @@ export function Login() {
   const [message, setMessage] = useState("");
 
   const handleSignUp = async () => {
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-    });
+  // 1. Check for empty fields first!
+  if (!email || !password) {
+    setMessage("Please enter both email and password to sign up.");
+    return;
+  }
 
-    if (error) {
-      setMessage("Error: " + error.message);
-    } else {
-      setMessage("Sign-up successful! Check your email.");
-    }
-  };
+  // 2. Use the signUp method
+  const { error } = await supabase.auth.signUp({
+    email: email.trim(),
+    password: password,
+  });
+
+  if (error) {
+    setMessage("Error: " + error.message);
+  } else {
+    // Since you disabled "Confirm Email" in image_62d569.png, 
+    // this should log them in immediately!
+    setMessage("Sign-up successful!");
+  }
+};
   
   const handleLogin = async () => {
   if (!email || !password) {
