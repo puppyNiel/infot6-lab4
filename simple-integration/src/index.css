@@ -1,0 +1,8 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:  #FFF8DC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

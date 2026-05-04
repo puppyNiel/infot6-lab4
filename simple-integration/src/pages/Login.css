@@ -1,0 +1,43 @@
+.container{
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+}
+
+input {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+button {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.login {
+    background: #4a90e2;
+    color: white;
+}
+
+.signup {
+    background-color: gray;
+}
+
+button:hover {
+    opacity: 0.9;
+}
